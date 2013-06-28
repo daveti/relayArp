@@ -1,0 +1,102 @@
+make
+insmod relayArp.ko
+dmesg
+[ 7228.570602] Loading Module
+[ 7228.570794] Loading done
+[root@daveti relay]# lsmod | grep relayArp
+relayArp               12675  0
+[root@daveti relay]#
+
+# If mount is desired....
+mkdir /mnt/relay
+mount -t debugfs debugfs /mnt/relay
+debugfs on /mnt/relay type debugfs (rw,relatime)
+[root@daveti relay]# pwd
+/mnt/relay
+[root@daveti relay]# ll
+total 0
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 acpi
+drwxr-xr-x. 19 root root 0 Jun 27 20:16 bdi
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 bluetooth
+drwxr-xr-x.  3 root root 0 Jun 27 20:16 boot_params
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 cleancache
+-r--------.  1 root root 0 Jun 27 22:16 cpu_arp0
+-r--------.  1 root root 0 Jun 27 22:16 cpu_arp1
+-r--------.  1 root root 0 Jun 27 22:16 cpu_arp2
+-r--------.  1 root root 0 Jun 27 22:16 cpu_arp3
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 cxgb4
+drwxr-xr-x.  4 root root 0 Jun 27 20:16 dri
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 dynamic_debug
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 extfrag
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 frontswap
+drwxr-xr-x.  4 root root 0 Jun 27 20:16 hid
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 kprobes
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 kvm
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 mce
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 regmap
+-rw-r--r--.  1 root root 0 Jun 27 20:16 sched_features
+-r--r--r--.  1 root root 0 Jun 27 20:16 suspend_stats
+drwxr-xr-x.  6 root root 0 Jun 27 20:16 tracing
+drwxr-xr-x.  4 root root 0 Jun 27 20:16 usb
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 virtio-ports
+-r--r--r--.  1 root root 0 Jun 27 20:16 wakeup_sources
+drwxr-xr-x.  2 root root 0 Jun 27 20:16 x86
+drwxr-xr-x.  3 root root 0 Jun 27 20:16 xen
+[root@daveti relay]#
+[root@daveti relay]# cat cpu_arp0
+[root@daveti relay]# cat cpu_arp1
+[root@daveti relay]# cat cpu_arp2
+Id
+H
+
+Id
+HIx!!#
+
+[root@daveti relay]# cat cpu_arp3
+[root@daveti relay]#
+
+# Actually, no mount is needed as debugfs is already enabled....
+mount
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+[root@daveti debug]# pwd
+/sys/kernel/debug
+[root@daveti debug]# ll
+total 0
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 acpi
+drwxr-xr-x. 19 root root 0 Jun 28 09:42 bdi
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 bluetooth
+drwxr-xr-x.  3 root root 0 Jun 28 09:42 boot_params
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 cleancache
+-r--------.  1 root root 0 Jun 28 10:41 cpu_arp0
+-r--------.  1 root root 0 Jun 28 10:41 cpu_arp1
+-r--------.  1 root root 0 Jun 28 10:41 cpu_arp2
+-r--------.  1 root root 0 Jun 28 10:41 cpu_arp3
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 cxgb4
+drwxr-xr-x.  4 root root 0 Jun 28 09:42 dri
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 dynamic_debug
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 extfrag
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 frontswap
+drwxr-xr-x.  4 root root 0 Jun 28 09:42 hid
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 kprobes
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 kvm
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 mce
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 regmap
+-rw-r--r--.  1 root root 0 Jun 28 09:42 sched_features
+-r--r--r--.  1 root root 0 Jun 28 09:42 suspend_stats
+drwxr-xr-x.  6 root root 0 Jun 28 09:42 tracing
+drwxr-xr-x.  4 root root 0 Jun 28 09:42 usb
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 virtio-ports
+-r--r--r--.  1 root root 0 Jun 28 09:42 wakeup_sources
+drwxr-xr-x.  2 root root 0 Jun 28 09:42 x86
+drwxr-xr-x.  3 root root 0 Jun 28 09:42 xen
+[root@daveti debug]# cat cpu_arp0
+[root@daveti debug]# cat cpu_arp1
+[root@daveti debug]# cat cpu_arp2
+Id
+H
+
+Id
+HIx!!#
+
+[root@daveti debug]# cat cpu_arp3
+

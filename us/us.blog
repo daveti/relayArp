@@ -1,0 +1,68 @@
+[root@daveti us]# ll
+total 16
+-rwxr-xr-x. 1 root   root   9216 Jun 28 12:14 relayArp_us
+-rw-rw-r--. 1 daveti daveti 3470 Jun 28 12:14 relayArp_us.c
+[root@daveti us]# ./relayArp_us
+ptr[0] = 0x0
+ptr[1] = 0x1
+ptr[2] = 0x80
+ptr[3] = 0x0
+ptr[4] = 0x6
+ptr[5] = 0x4
+ptr[6] = 0x0
+ptr[7] = 0x1
+ptr[8] = 0x49
+ptr[9] = 0x72
+ptr[10] = 0x16
+ptr[11] = 0x8
+ptr[12] = 0x64
+ptr[13] = 0x14
+ptr[14] = 0x81
+ptr[15] = 0x19
+ptr[16] = 0xa
+ptr[17] = 0x48
+ptr[18] = 0x0
+ptr[19] = 0x0
+ptr[20] = 0x0
+ptr[21] = 0x0
+ptr[22] = 0x0
+ptr[23] = 0x0
+ptr[24] = 0x81
+ptr[25] = 0x19
+ptr[26] = 0xa
+ptr[27] = 0xb
+ptr[0] = 0x0
+ptr[1] = 0x1
+ptr[2] = 0x80
+ptr[3] = 0x0
+ptr[4] = 0x6
+ptr[5] = 0x4
+ptr[6] = 0x0
+ptr[7] = 0x2
+ptr[8] = 0x49
+ptr[9] = 0x72
+ptr[10] = 0x16
+ptr[11] = 0x8
+ptr[12] = 0x64
+ptr[13] = 0x14
+ptr[14] = 0x81
+ptr[15] = 0x19
+ptr[16] = 0xa
+ptr[17] = 0x48
+ptr[18] = 0x49
+ptr[19] = 0x78
+ptr[20] = 0x21
+ptr[21] = 0x21
+ptr[22] = 0x23
+ptr[23] = 0x90
+ptr[24] = 0x81
+ptr[25] = 0x19
+ptr[26] = 0xa
+ptr[27] = 0xb
+[root@daveti us]# ./relayArp_us
+open failure for file /sys/kernel/debug/cpu_arp0: No such file or directory
+open failure for file /sys/kernel/debug/cpu_arp1: No such file or directory
+open failure for file /sys/kernel/debug/cpu_arp2: No such file or directory
+open failure for file /sys/kernel/debug/cpu_arp3: No such file or directory
+[root@daveti us]#
+
